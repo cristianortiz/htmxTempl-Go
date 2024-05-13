@@ -1,7 +1,12 @@
 package handlers
 
-import "net/http"
+import (
+	"net/http"
 
-func HandleFoo(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Foo is ready again"))
+	foo "github.com/cristianortiz/htmxTempl-Go/views"
+)
+
+func HandleFoo(w http.ResponseWriter, r *http.Request) error {
+	//rendering foo.index templ component and return it to the client as response
+	return Render(w, r, foo.Index())
 }

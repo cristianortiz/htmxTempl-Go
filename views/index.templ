@@ -1,7 +1,9 @@
-package foo
+package foo 	
 
-templ Index(){
-    <div>hello</div>
-    
+import layouts "github.com/cristianortiz/htmxTempl-Go/views/layouts"
 
+templ Index() {
+	@layouts.Base() {
+		<div>Welcome to GOHTT starter pack</div>
+	}
 }

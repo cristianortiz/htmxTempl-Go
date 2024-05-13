@@ -24,7 +24,8 @@ func init() {
 
 func main() {
 	router := chi.NewMux()
-	router.Get("/foo", handlers.HandleFoo)
+	//Make() is HTTPHandler wrapper
+	router.Get("/foo", handlers.Make(handlers.HandleFoo))
 	//Bind address for the server
 	port := os.Getenv("SERVER_PORT")
 
